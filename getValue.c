@@ -6,7 +6,9 @@ int main(){
     printf("%c\n",3[does]);
     printf("%c\n",*(does + 3));
     printf("%c\n",*(3 + does));
-    printf("%c",does[3]);
+    printf("%c\n",does[3]);
 
+    printf("Please press any key to exit.");
+    getchar();
     return 0;
 }
