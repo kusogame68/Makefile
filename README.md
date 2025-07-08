@@ -11,7 +11,7 @@ The goal is to simulate and learn the basic build process similar to how Linux k
 
 ### `Makefile`
 
-✅ Defines separate targets for each program and a `clean` target to remove compiled binaries.
+✅ Defines separate targets for each program and a `clean` target to remove compiled binaries.  
 ✅ The design is inspired by Linux kernel module Makefiles, but simplified for user-space C programs.
 
 ---
