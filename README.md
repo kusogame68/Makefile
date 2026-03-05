@@ -1,33 +1,45 @@
 # Simple C Programs with Makefile (Kernel Makefile Learning Practice)
 
-## 🎯 Purpose
+## Purpose
 
 This project contains simple C programs and a Makefile to help understand how `make` works.
 The goal is to simulate and learn the basic build process similar to how Linux kernel modules use `Makefile`.
 
 ---
 
-## 📄 Files
+## Files
 
 ### `Makefile`
 
-✅ Defines separate targets for each program and a `clean` target to remove compiled binaries.  
-✅ The design is inspired by Linux kernel module Makefiles, but simplified for user-space C programs.
+Defines separate targets for each program and a `clean` target to remove compiled binaries.
+The design is inspired by Linux kernel module Makefiles, but simplified for user-space C programs.
 
 ---
 
-## 🛠️ Build & Run
+## Build & Run
 
 ### Build and run `hello.c`
 
 ```bash
-make no1
+make hello
 ```
 
 ### Build and run `getValue.c`
 
 ```bash
-make no2
+make getValue
+```
+
+### Build and run `test.c`
+
+```bash
+make test
+```
+
+### Build and run `hello.c`, `getValue.c` at once
+
+```bash
+make all
 ```
 
 ### Clean binaries
@@ -38,7 +50,7 @@ make clean
 
 ---
 
-## 💡 Learning Purpose
+## Learning Purpose
 
 * Understand **Makefile structure** and how to define multiple targets.
 * Practice **pointer and array access** in C.
@@ -46,7 +58,7 @@ make clean
 
 ---
 
-## ⚙️ Next Steps
+## Next Steps
 
 To further simulate Linux kernel module style, consider rewriting the Makefile using:
 
@@ -63,10 +75,10 @@ clean:
 
 ---
 
-## 💬 Contact
+## Contact
 
 If you have questions or want to share learning progress, feel free to discuss!
 
 ---
 
-### 📢 Happy Coding & Kernel Hacking!
+### Happy Coding & Kernel Hacking!

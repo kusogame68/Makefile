@@ -1,28 +1,38 @@
 CC = gcc
-TARGET = no1 no2
+TARGET = hello getValue
 TEST = test
-.PHONY = all $(TARGET) $(TEST) clean
-FLAGS = -Wall -g -o 
+FLAGS = -Wall -g -o
+CLEAN_FILES = $(TARGET) $(TEST) student_score.txt
 
-all: noresault
+.PHONY : all $(TARGET) $(TEST) clean
+all: $(TARGET)
 
 noresault:
-	@echo "don't use this methods."
-	@echo "type methods plz"
+	@echo "Don't use this methods."
+	@echo "Type methods plz"
 
-test:
-	@$(CC) $(FLAGS) test test.c && ./test
-	@echo ""
-	@echo "\ntest make complete."
+test: test.c
+	@$(CC) $(FLAGS) $@ $@.c && ./$@
+	@echo "$@ make complete."
 
-no1: hello.c
-	@$(CC) $(FLAGS) no1 hello.c && ./no1
-	@printf "\nno1 make complete."
-
-no2: getValue.c
-	@$(CC) $(FLAGS) no2 getValue.c && ./no2
-	@printf "\nno2 make complete."
+# Replace the two functions above.
+# When running 'make all', it iterates through $(TARGET).
+# For each target (e.g., hello: hello.c):
+# '$@' expands to the target name (hello)
+# '$<' expands to the first prerequisite (hello.c)
+$(TARGET): %: %.c
+	@$(CC) $(FLAGS) $@ $<
+	@./$@
+	@printf "\n$@ make complete.\n"
 
 clean:
-	@rm -f no1 no2
-	@echo "Remove done."
+	@rm -f $(CLEAN_FILES)
+	@echo "Clean up done."
+
+# hello: hello.c
+# 	@$(CC) $(FLAGS) $@ $< && ./$@
+# 	@printf "\n$@ make complete."
+
+# getValue: getValue.c
+# 	@$(CC) $(FLAGS) $@ $< && ./$@
+# 	@printf "\n$@ make complete."
