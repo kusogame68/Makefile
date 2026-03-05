@@ -1,4 +1,4 @@
-# Simple C Programs with Makefile (Kernel Makefile Learning Practice)
+# Simple C Programs with Makefile<br>(Kernel Makefile Learning Practice)
 
 ## Purpose
 
@@ -72,13 +72,3 @@ all:
 clean:
 	$(MAKE) -C $(KDIR) M=$(PWD) clean
 ```
-
----
-
-## Contact
-
-If you have questions or want to share learning progress, feel free to discuss!
-
----
-
-### Happy Coding & Kernel Hacking!
